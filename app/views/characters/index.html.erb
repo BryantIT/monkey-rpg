@@ -1,1 +1,11 @@
-<h1>index</h1>
+<h1>Your Characters</h1>
+<button class="btn-block"><%= link_to "Create New Character", new_character_path %></button>
+
+<% @characters.each do |c| %>
+  <ul>
+    <%= c.first_name %>
+    <%= c.last_name %>
+    <%= c.job %>
+    <button><%= link_to "View", character_path(c.id) %></button>
+  </ul>
+  <% end %>

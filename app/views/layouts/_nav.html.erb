@@ -1,24 +1,28 @@
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <% if user_signed_in? %>
-  <%= link_to "Home", root_path %>
-  <%= link_to "Characters", characters_path %>
-  <%= link_to "My Profile", edit_user_registration_path %>
-  <%= link_to "Logout", destroy_user_session_path, method: "delete" %>
-  <% else  %>
-  <%= link_to "Log In", new_user_session_path %>
-  <%= link_to "New User", new_user_registration_path %>
-  <% end %>
 
-  <script>
-function openNav() {
-document.getElementById("mySidebar").style.width = "250px";
-document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-document.getElementById("mySidebar").style.width = "0";
-document.getElementById("main").style.marginLeft= "0";
-}
-</script>
-</div>
+  <nav class="border fixed split-nav">
+    <div class="nav-brand">
+      <h3><%= link_to "Home", root_path %></h3>
+    </div>
+    <div class="collapsible">
+      <input id="collapsible1" type="checkbox" name="collapsible1">
+      <button>
+      <label for="collapsible1">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </label>
+      </button>
+      <div class="collapsible-body">
+        <ul class="inline">
+          <% if user_signed_in? %>
+          <li><%= link_to "Characters", characters_path %></li>
+          <li><%= link_to "My Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
+          <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "New User", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
