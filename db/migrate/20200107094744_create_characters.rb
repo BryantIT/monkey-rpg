@@ -17,6 +17,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.string :hair_color
       t.string :size
       t.text :description
+      t.belongs_to :user
 
       t.timestamps
     end

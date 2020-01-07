@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 2020_01_07_094744) do
     t.string "hair_color"
     t.string "size"
     t.text "description"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
