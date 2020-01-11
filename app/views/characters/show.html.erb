@@ -1,5 +1,13 @@
 <h1>Your Character</h1>
 
+<button><%= link_to "Edit Character", edit_character_path %></button>
+
+  <% if @character.avatar.attached? %>
+    <%= image_tag url_for(@character.avatar), :class=> "edit-box" %>
+    <% else %>
+    <h3>No Photo</h3>
+  <% end %>
+
 <h2><%= @character.first_name %>  <%= @character.last_name %></h2>
 <h3>Job: [<%= @character.job %>]</h3>
 <h3>Race: [<%= @character.race %>] Gender: [<%= @character.gender %>] </h3>
@@ -10,4 +18,4 @@
 <h3>Charisma: [<%= @character.charisma %>] intelligence [<%= @character.intelligence %>]</h3>
 <h3>Description:</h3>
 
-  <p><%= @character.description %></p>
+<p><%= @character.description %></p>

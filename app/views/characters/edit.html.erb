@@ -1,1 +1,91 @@
 <h1>Edit</h1>
+<%= form_for(@character) do |f| %>
+
+<div class="row">
+  <div class="col sm-4">
+    <div class="form-group">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name%>
+    </div>
+  </div>
+
+  <div class="col sm-8">
+    <div class="form-group">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name%>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col sm-4">
+    <div class="form-group">
+      <%= f.label :race %><br>
+      <%= f.select :race, ['Human', 'Elf', 'Dwarf', 'Orc', 'Dragonborn'], :prompt => 'Select One' %>
+    </div>
+  </div>
+  <div class="col sm-8">
+    <div class="form-group">
+      <%= f.label :gender %><br>
+      <%= f.select :gender, ['Male', 'Female'], :prompt => "Select One" %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col sm-4">
+    <div class="form-group">
+      <%= f.label :eye_color %><br>
+      <%= f.select :eye_color, ['Blue', 'Red', 'Green', 'Brown', 'Black', 'Yellow', 'Purple'], :prompt => 'Select One' %>
+    </div>
+  </div>
+  <div class="col sm-8">
+    <div class="form-group">
+      <%= f.label :hair_color %><br>
+      <%= f.select :hair_color, ['Red', 'Blonde', 'Brown', 'Blue', 'Black', 'Purple'], :prompt => "Select One" %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col sm-4">
+    <div class="form-group">
+      <%= f.label :age %><br>
+      <%= f.number_field :age, min: 16, max: 50, step: 1%>
+    </div>
+  </div>
+
+  <div class="col sm-8">
+    <div class="form-group">
+      <%= f.label :size %><br>
+      <%= f.select :size, ['Small', 'Medium', 'Large'], :prompt => "Select One" %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col sm-4">
+    <div class="form-group">
+      <%= f.label :job %><br>
+      <%= f.select :job, ['Archer', 'Thief', 'Mage', 'Necromancer', 'Knight', 'Ninja'] , :prompt => "Select One"%>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col sm-4">
+    <div class="form-group">
+      <%= f.label :avatar %><br>
+      <%= f.file_field :avatar %>
+    </div>
+  </div>
+</div>
+
+<div class="col sm-8">
+  <div class="form-group">
+    <%= f.submit %><br>
+  </div>
+</div>
+
+
+<% end %>

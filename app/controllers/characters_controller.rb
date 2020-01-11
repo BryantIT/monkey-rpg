@@ -6,12 +6,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
-    @healthrand = rand(1-20) + 100
-    @strengthrand = rand(1-20) + 20
-    @dexterityrand = rand(1-20) + 20
-    @magicrand = rand(1-20) + 20
-    @charismarand = rand(1-20) + 20
-    @intelligencerand = rand(1-20) + 20
+    @healthrand = rand(1-24) + 100
+    @strengthrand = rand(1-24) + 24
+    @dexterityrand = rand(1-24) + 24
+    @magicrand = rand(1-24) + 24
+    @charismarand = rand(1-24) + 24
+    @intelligencerand = rand(1-24) + 24
   end
 
   def create
@@ -35,6 +35,7 @@ class CharactersController < ApplicationController
 
   def update
     @character = Character.find_by_id(params[:id])
+    @character.health = @character.health
     @character.update(character_params)
     redirect_to character_path(@character)
   end

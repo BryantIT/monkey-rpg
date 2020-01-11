@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ .edit-box {
+   width: 200px;
+   float: right;
+ }
