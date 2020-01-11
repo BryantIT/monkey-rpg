@@ -6,6 +6,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    @healthrand = rand(1-20) + 100
+    @strengthrand = rand(1-20) + 20
+    @dexterityrand = rand(1-20) + 20
+    @magicrand = rand(1-20) + 20
+    @charismarand = rand(1-20) + 20
+    @intelligencerand = rand(1-20) + 20
   end
 
   def create

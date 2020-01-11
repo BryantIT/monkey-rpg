@@ -1,1 +1,13 @@
-<h1>Show</h1>
+<h1>Your Character</h1>
+
+<h2><%= @character.first_name %>  <%= @character.last_name %></h2>
+<h3>Job: [<%= @character.job %>]</h3>
+<h3>Race: [<%= @character.race %>] Gender: [<%= @character.gender %>] </h3>
+<h3>Age: [<%= @character.age %>] Size: [<%= @character.size %>]</h3>
+<h3>Hair Color: [<%= @character.hair_color %>] Eye Color: [<%= @character.eye_color %>]</h3>
+<h3>Health: [<%= @character.health %>] Strength: [<%= @character.strength %>]</h3>
+<h3>Dexterity: [<%= @character.dexterity %>] Magic: [<%= @character.magic %>]</h3>
+<h3>Charisma: [<%= @character.charisma %>] intelligence [<%= @character.intelligence %>]</h3>
+<h3>Description:</h3>
+
+  <p><%= @character.description %></p>
